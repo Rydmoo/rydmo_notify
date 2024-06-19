@@ -1,0 +1,112 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lato";
+  overflow: hidden;
+}
+
+.success {
+  border-left: 3px solid rgb(52, 146, 52) !important;
+}
+
+.error {
+  border-left: 3px solid rgb(146, 52, 52) !important;
+}
+
+.info {
+  border-left: 3px solid rgb(43, 66, 100);
+}
+
+#root {
+  display: flex;
+  flex-flow: column-reverse;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100vw;
+}
+
+.notification {
+  position: flex-center;
+  overflow: hidden;
+  width: 370px;
+  color: white;
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  height: 75px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 15px;
+  background: rgba(31, 31, 31, 0.864);
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.notification.load {
+  animation: slideIn 0.5s forwards;
+}
+
+.notification.clear {
+  animation: slideOut 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.notification .container {
+  display: flex;
+  flex-flow: column;
+  padding: 15px;
+}
+
+.notification .title {
+  font-weight: 300;
+}
+
+.load {
+  animation: loadNotification 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.clear {
+  animation: clear 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes clear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes loadNotification {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
