@@ -1,5 +1,5 @@
 # Simple Notification
-This is a notification that i did for fun its a extremely simple notifications.
+This is free a notification that i did for fun its a extremely simple notifications.
 
 # install QB-Core
 Find this in qb-core/client/functions.lua
