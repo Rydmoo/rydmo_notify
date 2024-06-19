@@ -1,3 +1,6 @@
+
+![simplenotifcations](https://github.com/Rydmoo/rydmo_notify/assets/120792919/bbed3f5c-2791-49a7-b2cd-23c4c6ca975b)
+
 # Simple Notification
 This is free a notification that i did for fun its a extremely simple notifications.
 
