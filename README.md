@@ -3,7 +3,7 @@ This is a notification that i did for fun its a extremely simple notifications.
 
 # install QB-Core
 Find this in qb-core/client/functions.lua
-```
+```lua
 function QBCore.Functions.Notify(text, texttype, length, icon)
     local message = {
         action = 'notify',
@@ -27,7 +27,7 @@ end
 ```
 
 Replace it to this
-```
+```lua
 ---@param msg string
 ---@param nType string
 ---@param sound string
