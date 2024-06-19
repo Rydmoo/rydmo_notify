@@ -22,7 +22,7 @@ const notification = (event) => {
       event.data.type ? event.data.type : "info"
     }" id=${id}>
       <div class="container">
-        <small class="title">Notifikation</small>
+        <small class="title">Notification</small>
         <p>${
           event.data.message !== undefined
             ? event.data.message
