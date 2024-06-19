@@ -1,11 +1,10 @@
 const colors = {
-  "~r~": "#FF5733",   // Röd färg
-  "~g~": "#36A832",   // Grön färg
-  "~b~": "#FFFF"    // Blå färg
+  "~r~": "#FF5733",
+  "~g~": "#36A832",
+  "~b~": "#3270A8"
 };
 
 const notification = (event) => {
-  // Ersätt färger med span-taggar
   for (let color in colors) {
     if (event.data.message.includes(color)) {
       let colorArray = {};
@@ -16,10 +15,8 @@ const notification = (event) => {
     }
   }
 
-  // Skapa unikt ID för notifikationen
   let id = $(".notification").length + 1;
 
-  // Skapa notifikationsmall
   let notificationTpl = $(`
     <div class="notification ${
       event.data.type ? event.data.type : "info"
@@ -29,7 +26,7 @@ const notification = (event) => {
         <p>${
           event.data.message !== undefined
             ? event.data.message
-            : "Jag heter ~r~ohlson~s~ och jag luktar"
+            : "Simple notifikation"
         }</p>
       </div>
     </div>
@@ -48,6 +45,7 @@ const notification = (event) => {
       });
     }, event.data.timeout || 7500); 
   }, 100); 
+};
 
 const replaceStr = (stringT, obj) => {
   let returnString = stringT;
@@ -59,5 +57,4 @@ const replaceStr = (stringT, obj) => {
   return returnString;
 };
 
-// Lyssna på meddelanden från window och anropa notification-funktionen
 window.addEventListener("message", notification);
